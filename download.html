@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客户端下载 - 魔域猛男哥</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/download.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            首页
+        </a>
+        <a href="download.html" class="active">
+            <i class="fas fa-download"></i>
+            客户端下载
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-headset"></i>
+            联系客服
+        </a>
+    </nav>
+
+    <!-- 下载页面主体 -->
+    <div class="download-page">
+        <div class="download-container">
+            <div class="download-header">
+                <h1 class="page-title">选择您的下载方式</h1>
+                <p class="download-subtitle">选择适合您设备的客户端版本</p>
+            </div>
+            
+            <div class="download-cards">
+                <!-- Windows版本下载卡片 -->
+                <div class="download-card">
+                    <div class="card-platform">
+                        <i class="fab fa-windows platform-icon"></i>
+                        <h2>Windows 版本</h2>
+                    </div>
+                    <div class="card-info">
+                        <div class="version-info">
+                            <span class="version">v1.0.0</span>
+                            <span class="update-date">2024-12-30</span>
+                        </div>
+                        <div class="file-info">
+                            <span><i class="fas fa-hdd"></i> 858.5KB</span>
+                            <span><i class="fas fa-shield-alt"></i> 安全验证</span>
+                        </div>
+                    </div>
+                    <div class="download-action">
+                        <a href="https://www.123865.com/s/lmIpjv-VQh4H" class="download-btn windows">
+                            <i class="fas fa-download"></i>
+                            立即下载
+                        </a>
+                        <div class="extract-code">
+                            <span>提取码：</span>
+                            <code>mn66</code>
+                            <button class="copy-btn" onclick="copyCode('mn66')">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Android版本下载卡片 -->
+                <div class="download-card">
+                    <div class="card-platform">
+                        <i class="fab fa-android platform-icon"></i>
+                        <h2>Android 版本</h2>
+                    </div>
+                    <div class="card-info">
+                        <div class="version-info">
+                            <span class="version">v1.0.0</span>
+                            <span class="update-date">2024-12-30</span>
+                        </div>
+                        <div class="file-info">
+                            <span><i class="fas fa-hdd"></i> 1.3GB</span>
+                            <span><i class="fas fa-shield-alt"></i> 安全验证</span>
+                        </div>
+                    </div>
+                    <div class="download-action">
+                        <a href="https://www.123865.com/s/lmIpjv-dEh4H" class="download-btn android">
+                            <i class="fas fa-download"></i>
+                            立即下载
+                        </a>
+                        <div class="extract-code">
+                            <span>提取码：</span>
+                            <code>mn66</code>
+                            <button class="copy-btn" onclick="copyCode('mn66')">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下载说明区域 -->
+            <div class="download-notice">
+                <div class="notice-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>下载说明</h3>
+                </div>
+                <div class="notice-content">
+                    <div class="notice-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>下载后请使用解压软件解压文件</span>
+                    </div>
+                    <div class="notice-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>首次运行请以管理员身份运行</span>
+                    </div>
+                    <div class="notice-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>如遇问题请联系客服QQ群：666842614</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 在 download-cards 后面添加安全提示说明 -->
+            <div class="security-notice">
+                <div class="notice-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h2>关于.exe文件下载的安全提示</h2>
+                </div>
+                <div class="notice-content">
+                    <p class="notice-greeting">尊敬的用户：</p>
+                    
+                    <p>当您在下载.exe程序时，很可能会遇到这样的情况：电脑中的杀毒软件突然发出警报，将该.exe文件误认为病毒软件并进行拦截。这是因为.exe文件作为可执行程序，部分恶意软件也会采用这种格式，所以杀毒软件为了保障电脑安全，会采取谨慎的态度。</p>
+                    
+                    <p>如果您确定所下载的.exe文件来源可靠，您可以按照以下步骤操作：</p>
+                    
+                    <ol>
+                        <li><strong>暂时关闭杀毒软件：</strong>请谨慎关闭杀毒软件以免影响电脑整体的安全防护。不同的杀毒软件关闭方式有所不同，一般可以在系统托盘（任务栏右侧小图标处）找到杀毒软件图标，右键点击并选择"退出"或者"暂停保护"等类似选项。</li>
+                        <li><strong>完成.exe文件下载与安装：</strong>在杀毒软件关闭后，您可以放心地继续下载.exe文件，并按照安装程序的提示完成安装过程。</li>
+                        <li><strong>重新开启杀毒软件：</strong>安装完成后，为了确保电脑免受其他潜在威胁，请及时重新开启杀毒软件，并运行全面的病毒查杀扫描，以确保新安装的程序没有附带任何恶意程序。</li>
+                    </ol>
+                    <div class="notice-footer">
+                        <p>魔域猛男哥团队</p>
+                        <p>2024年12月30日</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加复制提取码的脚本 -->
+    <script>
+        function copyCode(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                alert('提取码已复制到剪贴板');
+            });
+        }
+    </script>
+</body>
+</html> 
