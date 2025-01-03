@@ -127,6 +127,53 @@
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    // ... 现有代码 ...
+
+/* 移动端适配 */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 0;
+        width: 100vw;
+        margin: 0;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .download-btn {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+}
 }
 
 .download-button:hover {
