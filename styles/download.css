@@ -1,0 +1,448 @@
+/* 下载页面专属样式 */
+.download-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.download-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.download-header {
+    text-align: center;
+    margin: 60px 0 50px;
+}
+
+.download-header h1 {
+    font-size: 36px;
+    color: #2d3436;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.download-subtitle {
+    font-size: 18px;
+    color: #636e72;
+}
+
+/* 下载卡片容器 */
+.download-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 40px 0;
+}
+
+/* 下载卡片样式 */
+.download-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 平台图标和标题 */
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.platform-icon {
+    font-size: 32px;
+    color: #6C5CE7;
+    margin-bottom: 16px;
+}
+
+.platform-header h2 {
+    margin: 16px 0 0;
+    font-size: 28px;
+    color: #2d3436;
+}
+
+/* 版本信息 */
+.version-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    color: #636e72;
+    font-size: 14px;
+}
+
+.file-size {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #4CAF50;
+}
+
+/* 下载按钮区域 */
+.download-action {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #6C5CE7;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.download-btn:hover {
+    background: #5849e6;
+    transform: translateY(-2px);
+}
+
+/* 提取码区域 */
+.extract-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.extract-code span {
+    color: #666;
+    font-size: 14px;
+}
+
+.extract-code code {
+    background: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    font-family: monospace;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: #6C5CE7;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 下载说明区域 */
+.download-notice {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.notice-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.notice-header i {
+    color: #6C5CE7;
+    font-size: 20px;
+}
+
+.notice-content {
+    display: grid;
+    gap: 15px;
+}
+
+.notice-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.notice-item i {
+    color: #6C5CE7;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .download-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .download-container {
+        padding: 15px;
+    }
+
+    .download-header h1 {
+        font-size: 24px;
+    }
+
+    .platform-header h2 {
+        font-size: 20px;
+    }
+}
+
+/* 导航栏样式 */
+nav {
+    background: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #6C5CE7;
+    background: rgba(108, 92, 231, 0.1);
+}
+
+nav a.active {
+    color: #6C5CE7;
+    background: rgba(108, 92, 231, 0.1);
+}
+
+nav i {
+    font-size: 16px;
+}
+
+/* 安全提示说明样式 */
+.security-notice {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.notice-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.notice-header i {
+    font-size: 24px;
+    color: #6C5CE7;
+}
+
+.notice-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.notice-content {
+    color: #666;
+    line-height: 1.6;
+}
+
+.notice-greeting {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.notice-content ol {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.notice-content li {
+    margin-bottom: 16px;
+}
+
+.notice-content strong {
+    color: #333;
+}
+
+.notice-warning {
+    background: rgba(108, 92, 231, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    margin: 20px 0;
+    color: #333;
+}
+
+.notice-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+    color: #666;
+}
+
+.notice-footer p {
+    margin: 5px 0;
+}
+
+.card-platform {
+    margin-bottom: 30px;
+}
+
+.card-platform h2 {
+    font-size: 28px;
+    margin: 16px 0 0;
+    color: #2d3436;
+}
+
+.card-info {
+    margin: 30px 0;
+}
+
+.version {
+    font-weight: 500;
+}
+
+.update-date {
+    color: #b2bec3;
+}
+
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    color: #636e72;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* 赞助表容器样式 */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 三列布局 */
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* 赞助表标题样式 */
+.sponsor-table-title {
+    font-size: 32px;
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* 比例说明样式 */
+.exchange-rate {
+    text-align: center;
+    background: rgba(108, 92, 231, 0.1);
+    color: #666;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 0 auto 40px;
+    width: fit-content;
+    font-size: 16px;
+}
+
+/* 赞助卡片样式 */
+.sponsor-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(108, 92, 231, 0.12);
+}
+
+/* 赞助标题样式 */
+.sponsor-title {
+    font-size: 24px;
+    color: #2d3436;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* 赞助列表样式 */
+.sponsor-list {
+    margin-top: 20px;
+}
+
+.sponsor-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    color: #636e72;
+    font-size: 15px;
+}
+
+/* 列表项前的点样式 */
+.sponsor-item .dot {
+    color: #6C5CE7;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* 响应式布局 */
+@media (max-width: 1024px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sponsor-card {
+        padding: 24px;
+    }
+} 

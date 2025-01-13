@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔域猛男哥</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alibaba-puhuiti-font@1.0.0/alibaba-puhuiti.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .nav {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav a i {
+            margin-right: 5px;
+        }
+
+        /* 首页样式 */
+        .home-section {
+            background: url('./images/bg-moyu.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            margin-top: -80px; /* 抵消导航栏的高度 */
+            margin-bottom: 40px;
+        }
+
+        /* 添加暗色遮罩，使文字更清晰 */
+        .home-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .home-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .home-title {
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            position: relative;
+            color: #fff;
+            display: inline-block;
+            clip-path: padding-box; /* 确保效果被裁剪在文字范围内 */
+        }
+
+        .home-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 15%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,.05) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shine 6s ease-in-out infinite;
+            pointer-events: none; /* 防止干扰文字交互 */
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            30% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .home-subtitle {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .home-description {
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .home-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .home-btn {
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .download-home-btn {
+            background: linear-gradient(135deg, #2374e1 0%, #0052a3 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(35, 116, 225, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-home-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transition: 0.5s;
+        }
+
+        .download-home-btn:hover::before {
+            left: 100%;
+        }
+
+        .contact-home-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .download-home-btn:hover {
+            box-shadow: 0 6px 20px rgba(35, 116, 225, 0.4);
+            background: linear-gradient(135deg, #1e68cc 0%, #004a94 100%);
+        }
+
+        .contact-home-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .home-btn i {
+            margin-right: 8px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease;
+        }
+
+        .home-btn:hover i {
+            transform: translateX(-3px);
+        }
+
+        .home-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            margin-top: 80px;
+            padding: 40px 20px;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-header h1 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .platform-text {
+            position: relative;
+            padding: 0 15px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            flex: 1;
+            text-align: center;
+        }
+
+        .platform-text::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0.7);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, #2374e1, #0052a3);
+            transition: all 0.3s ease;
+        }
+
+        .platform-text:hover::before {
+            width: 100%;
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.3em;
+            margin-top: 20px;
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #2374e1, #0052a3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            padding: 5px 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 2.2em;
+                flex-direction: column;
+                gap: 15px;
+                max-width: 100%;
+            }
+
+            .platform-text {
+                width: 100%;
+                padding: 5px 10px;
+            }
+
+            .platform-text::before {
+                width: 60%;
+            }
+
+            .section-header p {
+                font-size: 1.1em;
+                margin-top: 15px;
+            }
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: var(--card-gap);
+            padding: 0 var(--container-padding);
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            color: #0066cc;
+            margin-bottom: 20px;
+            align-self: center;
+        }
+
+        .contact-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 1.4em;
+            color: #333;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .copy-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            padding: 6px;
+            cursor: pointer;
+            color: #0066cc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            opacity: 1;
+        }
+
+        .copy-btn i {
+            font-size: 1.2em;
+        }
+
+        .contact-buttons {
+            display: flex;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .join-qq-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .join-qq-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+        }
+
+        .join-qq-btn i {
+            margin-right: 5px;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+            margin-top: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .file-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .file-info span {
+            display: flex;
+            align-items: center;
+            color: #666;
+        }
+
+        .file-info i {
+            margin-right: 5px;
+            color: #0066cc;
+        }
+
+        /* 返回顶部按钮样式 */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 102, 204, 0.9);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #0066cc;
+            transform: translateY(-3px);
+        }
+
+        /* 页面加载动画 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #0066cc;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: loader 1s linear infinite;
+        }
+        
+        @keyframes loader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .page-loader.loaded {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* 添加波纹效果 */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+
+        .ripple:active::after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+
+        /* 响应式设计基础变量 */
+        :root {
+            --container-padding: 20px;
+            --card-gap: 30px;
+            --section-spacing: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 10px 0;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-buttons {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 var(--container-padding);
+            }
+
+            .home-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-icon {
+                font-size: 2.5em;
+            }
+
+            .file-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 20px;
+                margin-bottom: var(--section-spacing);
+            }
+
+            .section-header h1 {
+                font-size: 2em;
+            }
+
+            .qr-code img {
+                max-width: 150px;
+            }
+        }
+
+        /* 针对 iPhone 14 的特定优化 */
+        @media (width: 390px) and (height: 844px) {
+            :root {
+                --container-padding: 15px;
+                --card-gap: 20px;
+                --section-spacing: 40px;
+            }
+
+            .home-section {
+                height: 100svh; /* 使用安全视口高度 */
+            }
+
+            .main-content {
+                margin-top: 60px;
+            }
+        }
+
+        /* 添加服务特点样式 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            color: #2374e1;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .feature-desc {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* 安全提示样式 */
+        .security-notice {
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+
+        .security-notice h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .security-notice h3 i {
+            color: #2374e1;
+        }
+
+        .security-notice p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .security-notice ol {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .security-notice li {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .security-notice .signature {
+            margin-top: 25px;
+            color: #666;
+            text-align: right;
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+            font-weight: 500;
+        }
+
+        .security-notice .date {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+            text-align: right;
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+        }
+
+        .signature-container {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* QQ群信息样式 */
+        .qq-group-info {
+            margin-top: 40px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .qq-group-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .qq-group-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .qq-group-header {
+            margin-bottom: 25px;
+        }
+
+        .qq-group-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #2374e1 0%, #0052a3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(35, 116, 225, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .qq-group-btn:hover {
+            background: linear-gradient(135deg, #1e68cc 0%, #004a94 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(35, 116, 225, 0.3);
+        }
+
+        .qq-group-btn i {
+            margin-right: 12px;
+            font-size: 1.3em;
+        }
+
+        .slogan-wrapper {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(35, 116, 225, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(35, 116, 225, 0.15);
+        }
+
+        .slogan-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-size: 1.4em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+        }
+
+        .highlight-sub {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .qq-group-text {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+            font-family: 'Alibaba PuHuiTi', sans-serif;
+        }
+
+        @media (max-width: 480px) {
+            .qq-group-container {
+                margin: 0 15px;
+                padding: 20px;
+            }
+            
+            .qq-group-btn {
+                width: 100%;
+                padding: 10px 20px;
+            }
+
+            .highlight {
+                font-size: 1.2em;
+            }
+
+            .highlight-sub {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 添加返回顶部按钮 -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 添加页面加载动画 -->
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gamepad"></i>
+                魔域猛男哥
+            </a>
+            <div class="nav-links">
+                <a href="https://qm.qq.com/q/qYrziVkdTc" class="home-btn download-home-btn ripple" data-aos="fade-right">
+                    <i class="fas fa-download"></i> 下载游戏
+                </a>
+                <a href="https://qm.qq.com/q/qYrziVkdTc" class="home-btn contact-home-btn ripple" data-aos="fade-left">
+                    <i class="fas fa-headset"></i> 联系我们
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页内容 -->
+    <div class="home-section" id="home">
+        <div class="home-content">
+            <h1 class="home-title" data-text="魔域猛男哥">魔域猛男哥</h1>
+            <p class="home-subtitle">专业的魔域游戏玩家社区</p>
+            <p class="home-description">重拾经典，猛男带你回到最初的感觉</p>
+            <div class="home-buttons">
+                <a href="https://qm.qq.com/q/qYrziVkdTc" class="home-btn download-home-btn ripple" data-aos="fade-right">
+                    <i class="fas fa-download"></i> 立即下载
+                </a>
+                <a href="https://qm.qq.com/q/qYrziVkdTc" class="home-btn contact-home-btn ripple" data-aos="fade-left">
+                    <i class="fas fa-headset"></i> 下载游戏
+                </a>
+            </div>
+            <!-- 添加QQ群信息区域 -->
+            <div class="qq-group-info" data-aos="fade-up">
+                <div class="qq-group-container">
+                    <div class="qq-group-header">
+                        <a href="https://qm.qq.com/q/qYrziVkdTc" target="_blank" class="qq-group-btn">
+                            <i class="fab fa-qq"></i> 官方QQ群：666842614
+                        </a>
+                    </div>
+                    <div class="slogan-wrapper">
+                        <div class="slogan-text">
+                            <span class="highlight">是男人就一定要猛</span>
+                            <span class="highlight-sub">加入我们一起干！</span>
+                        </div>
+                    </div>
+                    <p class="qq-group-text">需要安装包请添加我们的QQ群。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- 添加服务特点 -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-gamepad feature-icon"></i>
+                <h3 class="feature-title">专业代练</h3>
+                <p class="feature-desc">十年魔域经验，专业技术团队</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3 class="feature-title">极速升级</h3>
+                <p class="feature-desc">独特路线，效率至上</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3 class="feature-title">账号安全</h3>
+                <p class="feature-desc">安全防护，无忧托管</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-dollar-sign feature-icon"></i>
+                <h3 class="feature-title">价格优惠</h3>
+                <p class="feature-desc">合理定价，童叟无欺</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-bullseye feature-icon"></i>
+                <h3 class="feature-title">专属定制</h3>
+                <p class="feature-desc">个性化方案，满足需求</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt feature-icon"></i>
+                <h3 class="feature-title">24小时服务</h3>
+                <p class="feature-desc">全天在线，及时响应</p>
+            </div>
+        </div>
+
+        <!-- 安全提示 -->
+        <div class="security-notice">
+            <h3><i class="fas fa-shield-alt"></i> 关于.exe文件下载的安全提示</h3>
+            <p>尊敬的用户：</p>
+            <p>当您在下载.exe程序时，很可能会遇到这样的情况：电脑中的杀毒软件突然发出警报，将该.exe文件误认为病毒软件并进行拦截。这是因为.exe文件作为可执行程序，部分恶意软件也会采用这种格式，所以杀毒软件为了保障电脑安全，会采取谨慎的态度。</p>
+            <p>如果您确定所下载的.exe文件来源可靠，您可以按照以下步骤操作：</p>
+            <ol>
+                <li><strong>暂时关闭杀毒软件：</strong>请谨慎关闭杀毒软件以免影响电脑整体的安全防护。不同的杀毒软件关闭方式有所不同，一般可以在系统托盘（任务栏右侧小图标处）找到杀毒软件图标，右键点击并选择"退出"或者"暂停保护"等类似选项。</li>
+                <li><strong>完成.exe文件下载与安装：</strong>在杀毒软件关闭后，您可以放心地继续下载.exe文件，并按照安装程序的提示完成安装过程。</li>
+                <li><strong>重新开启杀毒软件：</strong>安装完成后，为了确保电脑免受其他潜在威胁，请及时重新开启杀毒软件，并运行全面的病毒查杀扫描，以确保新安装的程序没有附带任何恶意程序。</li>
+            </ol>
+            <div class="signature-container">
+                <div class="signature">魔域猛男哥团队</div>
+                <div class="date">2025年1月13日</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i><span>复制成功</span>';
+                btn.classList.add('copy-success');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('copy-success');
+                }, 2000);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-times"></i><span>复制失败</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // 处理滚动进度条
+        const backToTop = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            // 显示/隐藏返回顶部按钮
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            if (winScroll > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // 返回顶部功能
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 为所有导航链接添加平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 页面加载完成后隐藏加载动画
+        window.addEventListener('load', () => {
+            document.querySelector('.page-loader').classList.add('loaded');
+        });
+
+        // 初始化 AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // 添加按钮点击波纹效果
+        document.querySelectorAll('.ripple').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const circle = document.createElement('div');
+                circle.style.left = x + 'px';
+                circle.style.top = y + 'px';
+                
+                this.appendChild(circle);
+                setTimeout(() => circle.remove(), 1000);
+            });
+        });
+
+        // 处理文件下载
+        function startDownload(platform) {
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            
+            // 直接使用原生下载
+            try {
+                btn.innerHTML = '<i class="fas fa-check"></i> 开始下载';
+                
+                // 3秒后恢复按钮状态
+                setTimeout(() => {
+                    btn.style.pointerEvents = 'auto';
+                    btn.innerHTML = originalText;
+                }, 3000);
+                
+                // 记录下载统计
+                console.log(`${platform} 版本下载成功`);
+            } catch (error) {
+                console.error('下载失败:', error);
+                btn.innerHTML = '<i class="fas fa-times"></i> 下载失败';
+                setTimeout(() => {
+                    btn.style.pointerEvents = 'auto';
+                    btn.innerHTML = originalText;
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

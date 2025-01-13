@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            首页
+        </a>
+        <a href="download.html">
+            <i class="fas fa-download"></i>
+            客户端下载
+        </a>
+        <a href="contact.html" class="active">
+            <i class="fas fa-headset"></i>
+            联系客服
+        </a>
+    </nav>
+
+    <!-- 联系客服主体内容 -->
+    <div class="contact-page">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>联系客服</h1>
+                <p>我们随时为您提供帮助</p>
+            </div>
+
+            <!-- 联系方式卡片 -->
+            <div class="contact-cards">
+                <!-- QQ群卡片 -->
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fab fa-qq"></i>
+                    </div>
+                    <h2>官方QQ群</h2>
+                    <p class="contact-info">666842614</p>
+                    <button class="copy-btn" onclick="copyToClipboard('666842614')">
+                        <i class="far fa-copy"></i>
+                        复制群号
+                    </button>
+                </div>
+
+                <!-- 客服QQ卡片 -->
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h2>客服QQ</h2>
+                    <p class="contact-info">666842614</p>
+                    <button class="copy-btn" onclick="copyToClipboard('123456789')">
+                        <i class="far fa-copy"></i>
+                        复制QQ号
+                    </button>
+                </div>
+
+                <!-- 微信客服卡片 -->
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fab fa-qq"></i>
+                    </div>
+                    <h2>QQ客服</h2>
+                    <p class="contact-info">扫描下方二维码</p>
+                    <div class="qr-code">
+                        <img src="./images/QQ群二维码.jpg" alt="QQ客服二维码">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 服务时间说明 -->
+            <div class="service-hours">
+                <div class="hours-header">
+                    <i class="far fa-clock"></i>
+                    <h3>服务时间</h3>
+                </div>
+                <div class="hours-content">
+                    <p>周一至周五：9:00 - 21:00</p>
+                    <p>周六至周日：10:00 - 20:00</p>
+                    <p>节假日：10:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('复制成功！');
+            }).catch(() => {
+                alert('复制失败，请手动复制。');
+            });
+        }
+    </script>
+</body>
+</html> 
